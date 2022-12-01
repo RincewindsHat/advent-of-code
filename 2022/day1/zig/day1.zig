@@ -55,16 +55,3 @@ pub fn main() !void {
 
     try stdout.print("Top three calories: {d}\n", .{top_three_cal});
 }
-
-const Data = struct {
-    data: u64,
-};
-
-fn cmpByData(context: void, a: Data, b: Data) bool {
-    _ = context;
-    if (a.data < b.data) {
-      return true;
-    } else {
-      return false;
-    }
-}
