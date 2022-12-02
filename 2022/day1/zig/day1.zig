@@ -14,7 +14,7 @@ pub fn main() !void {
     var tmp_number: u64 = 0;
     var last_char: u8 = '0';
     var sums = std.ArrayList(u64).init(allocator);
-    sums.deinit();
+    defer sums.deinit();
     for (payload.*) |elem , i| {
         if ((payload.*[i] >= '0') and (payload.*[i] <= '9')) {
             // we got a number, so progress end
